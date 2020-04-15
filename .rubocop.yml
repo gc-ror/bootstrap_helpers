@@ -1,0 +1,16 @@
+Style/AsciiComments:
+  Enabled: false
+Metrics/LineLength:
+  Max: 120
+Metrics/ParameterLists:
+  Max: 10
+Metrics/ClassLength:
+  Max: 300
+Metrics/AbcSize:
+  Max: 40
+Metrics/MethodLength:
+  Max: 40
+Metrics/CyclomaticComplexity:
+  Max: 15
+Metrics/PerceivedComplexity:
+  Max: 20
