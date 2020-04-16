@@ -85,8 +85,8 @@ module BootstrapHelpers
 
     def bs_collection_check_boxes(object, method, collection,
                                   value_method, text_method, options = {}, html_options = {}, &block)
-      CollectionCheckBoxes.new(object, method, self, collection,
-                               value_method, text_method, options, html_options).render(&block)
+      Tags::CollectionCheckBoxes.new(object, method, self, collection,
+                                     value_method, text_method, options, html_options).render(&block)
     end
 
     def bs_link_to(name = nil, path = nil, active: nil, force_link: false, **options, &block)
