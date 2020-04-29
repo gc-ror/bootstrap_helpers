@@ -203,7 +203,7 @@ module BootstrapHelpers
 
     def caption(method_or_value)
       if method_or_value.is_a? Symbol
-        if object.is_a? ApplicationRecord
+        if object.is_a?(ActiveRecord::Base) || object.is_a?(ActiveModel::Translation)
           object.class.human_attribute_name(method_or_value)
         else
           I18n.t "helpers.label.#{method_or_value}"
