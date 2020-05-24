@@ -23,7 +23,7 @@ module BootstrapHelpers
         when :must
           value
         else
-          target = key == :controller ? params[key].split('/').last : params[key]
+          target = key == :controller ? params[key]&.split('/')&.last : params[key]
           case value
           when Hash
             params_match?(scope[key], value)
