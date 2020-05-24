@@ -90,8 +90,7 @@ module BootstrapHelpers
     end
 
     def bs_link_to(name = nil, path = nil, active: nil, force_link: false, **options, &block)
-      name = block_given? ? block : name
-      path = block_given? ? name : path
+      name, path = block_given? ? [block, name] : [name, path]
 
       if !block_given? && name.is_a?(Symbol)
         name = translate_name(path, name) || translate_name(options, name) || I18n.t("helpers.label.#{name}")
