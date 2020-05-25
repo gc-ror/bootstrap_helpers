@@ -22,9 +22,9 @@ module BootstrapHelpers
         content = if block_given?
                     capture do
                       yield value, method, object
-                    end.html_safe
+                    end
                   elsif helper.present?
-                    template.send(helper, value)
+                    @template.send(helper, value)
                   else
                     value.to_s
                   end
