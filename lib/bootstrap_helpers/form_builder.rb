@@ -180,8 +180,9 @@ module BootstrapHelpers
       end
     end
 
-    def bs_check_box(method, checked_value: '1', unchecked_value: '0', container: true, **options)
-      html = tag.div class: 'custom-control custom-checkbox' do
+    def bs_check_box(method, checked_value: '1', unchecked_value: '0', container: true, inline: false, **options)
+      tag_class = ['custom-control custom-checkbox', ('custom-control-inline' if inline)].select(&:present?).join(' ')
+      html = tag.div class: tag_class do
         options[:class] = ['custom-control-input', options[:class]].select(&:present?).join(' ')
         concat check_box(method, options, checked_value, unchecked_value)
         concat label(method, class: 'custom-control-label')
